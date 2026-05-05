@@ -119,11 +119,11 @@ export default function Navbar() {
               <span className="font-semibold">+251 911 234 567</span>
             </a>
             <Link
-              href="/book"
-              className="bg-primary hover:bg-primary-hover text-white px-5 lg:px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-primary/20 font-sans text-sm"
+              href="/contact"
+              className="bg-primary hover:bg-primary-hover text-white px-5 lg:px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-primary/30 font-sans text-sm"
             >
-              <Calendar className="w-4 h-4" />
-              <span className="hidden sm:inline uppercase tracking-widest">Book Appointment</span>
+              <Phone className="w-4 h-4" />
+              <span className="uppercase tracking-widest">Contact Us</span>
             </Link>
 
             {/* Mobile menu button */}

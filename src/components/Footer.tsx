@@ -36,23 +36,17 @@ export default function Footer() {
               </div>
             </div>
 
-            <div id="book" className="bg-gray-50 rounded-3xl p-8 shadow-inner border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Request an Appointment</h3>
-              <form className="space-y-4" suppressHydrationWarning>
+            <div id="book" className="bg-gray-50 rounded-3xl p-10 shadow-inner border border-gray-100">
+              <h3 className="text-3xl font-bold text-gray-900 mb-8 font-cormorant">Contact Us</h3>
+              <form className="space-y-6" suppressHydrationWarning>
+                <input type="text" placeholder="Full Name" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors placeholder:text-gray-500" />
                 <div className="grid grid-cols-2 gap-4">
-                  <input type="text" placeholder="First Name" suppressHydrationWarning className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
-                  <input type="text" placeholder="Last Name" suppressHydrationWarning className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
+                  <input type="email" placeholder="Email Address" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors placeholder:text-gray-500" />
+                  <input type="tel" placeholder="Phone Number" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors placeholder:text-gray-500" />
                 </div>
-                <input type="tel" placeholder="Phone Number" suppressHydrationWarning className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[#F0F9FF]" suppressHydrationWarning>
-                  <option>Select Service</option>
-                  <option>General Checkup</option>
-                  <option>Dental Implants</option>
-                  <option>Cosmetic Dentistry</option>
-                  <option>Emergency</option>
-                </select>
-                <button type="button" className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
-                  Request Booking
+                <textarea placeholder="How can we help you?" rows={4} suppressHydrationWarning className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors placeholder:text-gray-500 resize-none" />
+                <button type="button" className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                  Send Message
                 </button>
               </form>
             </div>
