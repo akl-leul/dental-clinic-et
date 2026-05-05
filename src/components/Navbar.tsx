@@ -46,6 +46,7 @@ export default function Navbar() {
         { name: 'FAQs', href: '/faq' },
       ]
     },
+    { name: 'Book', href: '/book' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
 
@@ -116,14 +117,14 @@ export default function Navbar() {
                 }`}
             >
               <Phone className="w-5 h-5 text-primary" />
-              <span className="font-semibold">+251 911 234 567</span>
+              <span className="font-bold">+251 911 234 567</span>
             </a>
             <Link
-              href="/contact"
+              href="/book"
               className="bg-primary hover:bg-primary-hover text-white px-5 lg:px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-primary/30 font-sans text-sm"
             >
               <Phone className="w-4 h-4" />
-              <span className="uppercase tracking-widest">Contact Us</span>
+              <span className="uppercase tracking-widest">Book Now</span>
             </Link>
 
             {/* Mobile menu button */}

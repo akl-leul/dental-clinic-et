@@ -41,42 +41,48 @@ export default function BookAppointment() {
             </div>
 
             {/* Middle: The Form */}
-            <div className="lg:col-span-2 bg-[#F0F9FF] rounded-[3rem] p-10 lg:p-16 shadow-2xl border border-gray-100">
+            <div className="lg:col-span-2 bg-white rounded-[3rem] p-10 lg:p-16 shadow-2xl border border-gray-100">
               <form className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-900 uppercase tracking-widest font-sans">Full Name</label>
-                    <input type="text" className="w-full bg-gray-50 border-0 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter your name" />
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Full Name</label>
+                    <input type="text" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="e.g. John Doe" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-900 uppercase tracking-widest font-sans">Email Address</label>
-                    <input type="email" className="w-full bg-gray-50 border-0 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter your email" />
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Email Address</label>
+                    <input type="email" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="john@example.com" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-900 uppercase tracking-widest font-sans">Phone Number</label>
-                    <input type="tel" className="w-full bg-gray-50 border-0 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter phone number" />
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Phone Number</label>
+                    <input type="tel" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="+251 ..." />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-900 uppercase tracking-widest font-sans">Service Needed</label>
-                    <select className="w-full bg-gray-50 border-0 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none">
-                      <option>General Checkup</option>
-                      <option>Cosmetic Dentistry</option>
-                      <option>Orthodontics</option>
-                      <option>Emergency Care</option>
-                    </select>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Service Needed</label>
+                    <div className="relative">
+                      <select className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all appearance-none text-gray-900">
+                        <option>General Checkup</option>
+                        <option>Cosmetic Dentistry</option>
+                        <option>Orthodontics</option>
+                        <option>Restorative Care</option>
+                        <option>Pediatric Care</option>
+                      </select>
+                      <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                        <Calendar className="w-5 h-5" />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-900 uppercase tracking-widest font-sans">Additional Message</label>
-                  <textarea rows={4} className="w-full bg-gray-50 border-0 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Tell us more about your visit..."></textarea>
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Additional Message</label>
+                  <textarea rows={4} className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900 resize-none" placeholder="Tell us more about your visit..."></textarea>
                 </div>
 
-                <button className="w-full bg-primary hover:bg-primary-hover text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1">
-                  Confirm Booking Request
+                <button className="w-full bg-primary hover:bg-primary-hover text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1">
+                  Send Message
                 </button>
               </form>
             </div>
