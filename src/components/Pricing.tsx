@@ -54,7 +54,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="py-24 bg-white font-cormorant">
+    <section className="py-24 bg-[#F0F9FF] font-cormorant">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3 font-sans">Transparent Investment</h2>
@@ -72,7 +72,7 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative p-8 rounded-[2.5rem] border ${plan.popular ? 'border-primary shadow-2xl bg-white scale-105 z-10' : 'border-gray-100 shadow-lg bg-gray-50'}`}
+              className={`relative p-8 rounded-[2.5rem] border ${plan.popular ? 'border-primary shadow-2xl bg-[#F0F9FF] scale-105 z-10' : 'border-gray-100 shadow-lg bg-gray-50'}`}
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest font-sans">
@@ -104,9 +104,9 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Link 
+              <Link
                 href="#book"
-                className={`w-full py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-lg transition-all font-sans ${plan.popular ? 'bg-primary text-white hover:bg-red-800 shadow-xl shadow-primary/30' : 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-50'}`}
+                className={`w-full py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-lg transition-all font-sans ${plan.popular ? 'bg-primary text-white hover:bg-primary-hover shadow-xl shadow-primary/30' : 'bg-[#F0F9FF] text-gray-900 border border-gray-200 hover:bg-gray-50'}`}
               >
                 {plan.cta}
                 <ArrowRight className="w-5 h-5" />

@@ -78,7 +78,7 @@ export default function TreatmentQuiz() {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative min-h-[400px] flex flex-col">
+          <div className="bg-[#F0F9FF]/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative min-h-[400px] flex flex-col">
             <AnimatePresence mode="wait">
               {step < questions.length ? (
                 <motion.div
@@ -95,7 +95,7 @@ export default function TreatmentQuiz() {
                       <button
                         key={index}
                         onClick={() => handleAnswer(option)}
-                        className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 transition-all font-sans text-sm lg:text-base flex justify-between items-center group"
+                        className="w-full text-left p-4 rounded-xl border border-white/10 bg-[#F0F9FF]/5 hover:bg-[#F0F9FF]/10 hover:border-primary/50 transition-all font-sans text-sm lg:text-base flex justify-between items-center group"
                       >
                         {option}
                         <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />

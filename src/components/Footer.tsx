@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <>
-      <footer id="contact" className="bg-white pt-24 pb-12 border-t border-gray-100">
+      <footer id="contact" className="bg-[#F0F9FF] pt-24 pb-12 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 mb-16">
             <div>
@@ -12,25 +12,25 @@ export default function Footer() {
               <p className="text-lg text-gray-600 mb-8">
                 Book your consultation today and discover why we are the top-rated dental clinic in Addis Ababa.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-full text-primary mt-1">
+                  <div className="bg-primary/10 p-3 rounded-full text-primary mt-1">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
                     <h5 className="font-bold text-gray-900 text-lg">Visit Us</h5>
-                    <p className="text-gray-600">Bole Road, Next to Friendship Mall<br/>Addis Ababa, Ethiopia</p>
+                    <p className="text-gray-600">Bole Road, Next to Friendship Mall<br />Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-full text-primary mt-1">
+                  <div className="bg-primary/10 p-3 rounded-full text-primary mt-1">
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
                     <h5 className="font-bold text-gray-900 text-lg">Working Hours</h5>
-                    <p className="text-gray-600">Mon - Sat: 8:00 AM - 6:00 PM<br/>Sunday: Emergency Only</p>
+                    <p className="text-gray-600">Mon - Sat: 8:00 AM - 6:00 PM<br />Sunday: Emergency Only</p>
                   </div>
                 </div>
               </div>
@@ -44,14 +44,14 @@ export default function Footer() {
                   <input type="text" placeholder="Last Name" suppressHydrationWarning className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
                 </div>
                 <input type="tel" placeholder="Phone Number" suppressHydrationWarning className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-white" suppressHydrationWarning>
+                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[#F0F9FF]" suppressHydrationWarning>
                   <option>Select Service</option>
                   <option>General Checkup</option>
                   <option>Dental Implants</option>
                   <option>Cosmetic Dentistry</option>
                   <option>Emergency</option>
                 </select>
-                <button type="button" className="w-full bg-primary hover:bg-red-800 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                <button type="button" className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
                   Request Booking
                 </button>
               </form>
@@ -98,7 +98,7 @@ export default function Footer() {
                 <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Cosmetic Whitening</Link></li>
                 <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Veneers & Bonding</Link></li>
                 <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Orthodontics</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans text-red-500 font-bold">Emergency Care</Link></li>
+                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans font-bold">Emergency Care</Link></li>
               </ul>
             </div>
 
@@ -123,9 +123,9 @@ export default function Footer() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <a 
-        href="https://wa.me/251911234567" 
-        target="_blank" 
+      <a
+        href="https://wa.me/251911234567"
+        target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-[0_0_20px_rgba(34,197,94,0.5)] transition-all transform hover:-translate-y-1 flex items-center gap-2 group"
       >

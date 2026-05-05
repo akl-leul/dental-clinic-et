@@ -80,23 +80,23 @@ export default function Services() {
               variants={itemVariants}
               className="group aspect-square relative rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 border border-gray-100 mx-auto w-full max-w-[400px] cursor-pointer"
             >
-              <Image 
-                src={service.image} 
-                alt={service.title} 
-                fill 
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
-              
+
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg mb-4 transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                <div className="w-12 h-12 bg-[#F0F9FF] rounded-xl flex items-center justify-center shadow-lg mb-4 transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                   {service.icon}
                 </div>
-                
+
                 <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2 font-cormorant transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {service.title}
                 </h4>
-                
+
                 <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 delay-100">
                   <p className="text-gray-300 text-sm lg:text-base leading-relaxed mb-4">
                     {service.description}

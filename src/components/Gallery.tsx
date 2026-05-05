@@ -20,9 +20,9 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#F0F9FF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -35,7 +35,7 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,38 +43,38 @@ export default function Gallery() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <motion.div variants={itemVariants} className="relative aspect-square rounded-2xl overflow-hidden group shadow-lg">
-            <Image 
-              src="/clinic_reception.png" 
-              alt="Clinic Reception" 
-              fill 
+            <Image
+              src="/clinic_reception.png"
+              alt="Clinic Reception"
+              fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
               <span className="text-white font-semibold text-lg p-6">Welcoming Reception</span>
             </div>
           </motion.div>
-          
+
           <motion.div variants={itemVariants} className="relative aspect-square rounded-2xl overflow-hidden group shadow-lg">
-            <Image 
-              src="/clinic_room.png" 
-              alt="Operating Room" 
-              fill 
+            <Image
+              src="/clinic_room.png"
+              alt="Operating Room"
+              fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
               <span className="text-white font-semibold text-lg p-6">State-of-the-Art Rooms</span>
             </div>
           </motion.div>
-          
+
           <motion.div variants={itemVariants} className="relative aspect-square md:col-span-2 lg:col-span-1 rounded-2xl overflow-hidden group shadow-lg">
-            <Image 
-              src="/clinic_equipment.png" 
-              alt="Advanced Equipment" 
-              fill 
+            <Image
+              src="/clinic_equipment.png"
+              alt="Advanced Equipment"
+              fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
               <span className="text-white font-semibold text-lg p-6">Advanced Technology</span>

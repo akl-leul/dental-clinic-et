@@ -8,7 +8,7 @@ import ToothModel from './ToothModel';
 export default function Hero3D() {
   return (
     <div className="relative min-h-[100vh] lg:min-h-[90vh] bg-gradient-to-br from-white to-gray-100 overflow-hidden flex items-center justify-center pt-24 lg:pt-0 font-cormorant">
-      
+
       {/* Background Huge Watermark */}
       <div className="absolute inset-0 -mt-60 flex items-center justify-center opacity-40 pointer-events-none select-none overflow-hidden z-0">
         <h1 className="text-[25vw] font-black text-red-50 leading-none tracking-tighter">
@@ -18,20 +18,20 @@ export default function Hero3D() {
 
       {/* Main Content Container */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-        
+
         {/* Top Floating Badge - Hidden on very small screens or adjusted */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute top-4 lg:top-24 left-4 lg:left-8 bg-white/80 backdrop-blur-md px-4 lg:px-6 py-2 rounded-full shadow-sm flex items-center gap-3 border border-white/50"
+          className="absolute top-4 lg:top-24 left-4 lg:left-8 bg-[#F0F9FF]/80 backdrop-blur-md px-4 lg:px-6 py-2 rounded-full shadow-sm flex items-center gap-3 border border-white/50"
         >
           <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
           <span className="text-gray-600 font-bold tracking-wide text-xs lg:text-sm">Trusted Dental Care</span>
         </motion.div>
 
         {/* Location & Time Info */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -47,7 +47,7 @@ export default function Hero3D() {
 
         {/* Center 3D Tooth Model */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 overflow-visible">
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1.2, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
@@ -59,26 +59,26 @@ export default function Hero3D() {
 
         {/* Typography Left & Right */}
         <div className="flex flex-col lg:flex-row justify-between items-center w-full z-10 pointer-events-none relative mt-16 lg:mt-32 gap-12 lg:gap-0">
-          
+
           {/* Left Text */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="flex flex-col gap-2 pointer-events-auto text-center lg:text-left items-center lg:items-start"
           >
-            <h2 className="text-[12vw] lg:text-[100px] leading-[0.9] font-normal tracking-tight text-gray-900" 
-                style={{ WebkitTextStroke: '1px #111827', color: 'transparent' }}>
+            <h2 className="text-[12vw] lg:text-[100px] leading-[0.9] font-normal tracking-tight text-gray-900"
+              style={{ WebkitTextStroke: '1px #111827', color: 'transparent' }}>
               Exceptional
             </h2>
             <h2 className="text-[12vw] lg:text-[100px] leading-[0.9] font-light tracking-tight text-gray-900 opacity-80">
               Dental Care
             </h2>
-            
+
             <p className="max-w-[300px] lg:max-w-[400px] text-gray-600 mt-4 lg:mt-8 text-base lg:text-xl leading-relaxed font-semibold italic">
               We combine delivery speed and service accuracy to ensure every patient leaves with their best smile.
             </p>
-            
+
             <Link href="#book" className="mt-6 lg:mt-8 bg-black hover:bg-gray-900 text-white px-6 lg:px-8 py-3 lg:py-5 flex items-center gap-4 w-fit transition-transform hover:scale-105 pointer-events-auto rounded-full lg:rounded-none">
               <span className="font-bold text-lg lg:text-xl">Book Appointment</span>
               <ArrowRight className="w-5 h-5" />
@@ -96,7 +96,7 @@ export default function Hero3D() {
           </motion.div>
 
           {/* Right Text */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -123,13 +123,13 @@ export default function Hero3D() {
         </div>
 
         {/* Floating Tags - Adjusted for responsive or hidden on mobile */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
           className="absolute left-[34%] top-[65%] hidden xl:flex items-center gap-4 z-30"
         >
-          <div className="bg-white/40 backdrop-blur-md border border-white/60 px-4 py-2 rounded-lg shadow-sm flex items-center gap-6">
+          <div className="bg-[#F0F9FF]/40 backdrop-blur-md border border-white/60 px-4 py-2 rounded-lg shadow-sm flex items-center gap-6">
             <div>
               <p className="text-[10px] text-gray-600 font-bold tracking-wider uppercase">Root Canal Treatment</p>
               <p className="text-[9px] text-gray-500 font-bold">634 Patients</p>
@@ -141,13 +141,13 @@ export default function Hero3D() {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="absolute right-[34%] top-[50%] hidden xl:flex items-center gap-4 z-30 flex-row-reverse"
         >
-          <div className="bg-white/40 backdrop-blur-md border border-white/60 px-4 py-2 rounded-lg shadow-sm flex items-center gap-6">
+          <div className="bg-[#F0F9FF]/40 backdrop-blur-md border border-white/60 px-4 py-2 rounded-lg shadow-sm flex items-center gap-6">
             <div>
               <p className="text-[10px] text-gray-600 font-bold tracking-wider uppercase">Dental Check-Up</p>
               <p className="text-[9px] text-gray-500 font-bold">840 Patients</p>

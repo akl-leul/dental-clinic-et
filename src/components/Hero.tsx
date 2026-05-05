@@ -76,10 +76,10 @@ export default function Hero() {
                 src={backgrounds[currentBg].src}
               />
             ) : (
-              <Image 
-                src={backgrounds[currentBg].src} 
-                alt="Clinic background" 
-                fill 
+              <Image
+                src={backgrounds[currentBg].src}
+                alt="Clinic background"
+                fill
                 className="object-cover opacity-60"
                 priority
               />
@@ -95,9 +95,9 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0F9FF]/10 backdrop-blur-sm border border-white/20 mb-6"
           >
-            <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
             <span className="text-white text-xs lg:text-sm font-medium tracking-wide uppercase font-sans">Now accepting new patients</span>
           </motion.div>
 
@@ -135,11 +135,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a href="#book" className="bg-primary hover:bg-red-800 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 font-sans">
+            <a href="#book" className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 group shadow-xl shadow-primary/20 font-sans">
               Book a Consultation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="#services" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all flex items-center justify-center border border-white/20 font-sans">
+            <a href="#services" className="bg-[#F0F9FF]/10 hover:bg-[#F0F9FF]/20 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all flex items-center justify-center border border-white/20 font-sans">
               View Our Services
             </a>
           </motion.div>

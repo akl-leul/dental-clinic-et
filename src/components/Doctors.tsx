@@ -6,7 +6,7 @@ import { Award, CheckCircle } from 'lucide-react';
 
 export default function Doctors() {
   return (
-    <section id="about" className="py-24 h-full bg-white overflow-hidden">
+    <section id="about" className="py-24 h-full bg-[#F0F9FF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -37,7 +37,7 @@ export default function Doctors() {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
               viewport={{ once: true }}
-              className="absolute -right-8 top-12 bg-white p-6 rounded-2xl shadow-xl animate-bounce"
+              className="absolute -right-8 top-12 bg-[#F0F9FF] p-6 rounded-2xl shadow-xl animate-bounce"
               style={{ animationDuration: '3s' }}
             >
               <div className="flex items-center gap-4">
@@ -98,7 +98,7 @@ export default function Doctors() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Dr. Martha Tadesse", role: "Orthodontist", img: "/happy_patient_3.png" },
-              { name: "Dr. Elias Bekele", role: "Oral Surgeon", img: "/doctor_profile_1777995595588.png" },
+              { name: "Dr. Elias Bekele", role: "Oral Surgeon", img: "/doctor_profile.png" },
               { name: "Dr. Selamawit G.", role: "Pediatric Dentist", img: "/happy_patient_2.png" }
             ].map((doc, i) => (
               <motion.div
@@ -109,11 +109,11 @@ export default function Doctors() {
                 transition={{ delay: i * 0.1 }}
                 className="group relative overflow-hidden rounded-[2.5rem] bg-gray-50 aspect-[4/5] hover:shadow-2xl transition-all duration-500"
               >
-                <Image 
-                  src={doc.img} 
-                  alt={doc.name} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                <Image
+                  src={doc.img}
+                  alt={doc.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-8">
