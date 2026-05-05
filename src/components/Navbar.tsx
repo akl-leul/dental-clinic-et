@@ -42,12 +42,15 @@ export default function Navbar() {
       dropdown: [
         { name: 'Our Story', href: '/about' },
         { name: 'Meet Our Dentists', href: '/dentists' },
-        { name: 'Gallery', href: '/gallery' },
+
         { name: 'FAQs', href: '/faq' },
       ]
     },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
+
     { name: 'Contact', href: '/contact' },
+
   ];
 
   return (
@@ -109,7 +112,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+251911234567"
-              className={`hidden lg:flex items-center gap-2 transition-colors duration-500 ${scrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'
+              className={`hidden lg:flex items-center gap-2 transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'
                 }`}
             >
               <Phone className="w-5 h-5 text-primary" />
