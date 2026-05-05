@@ -83,33 +83,33 @@ export default function Footer() {
             <div>
               <h4 className="font-bold text-gray-900 mb-6 uppercase text-xs tracking-widest font-sans">Quick Links</h4>
               <ul className="space-y-4">
-                <li><Link href="#services" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Services</Link></li>
-                <li><Link href="#location" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Our Location</Link></li>
-                <li><Link href="#about" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Meet the Team</Link></li>
-                <li><Link href="#faq" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">FAQs</Link></li>
-                <li><Link href="#book" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans font-bold">Book Now</Link></li>
+                <li><Link href="/#services" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Services</Link></li>
+                <li><Link href="/contact" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Our Location</Link></li>
+                <li><Link href="/about" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Meet the Team</Link></li>
+                <li><Link href="/faq" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">FAQs</Link></li>
+                <li><Link href="/book" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans font-bold">Book Now</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold text-gray-900 mb-6 uppercase text-xs tracking-widest font-sans">Treatments</h4>
               <ul className="space-y-4">
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Dental Implants</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Cosmetic Whitening</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Veneers & Bonding</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Orthodontics</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans font-bold">Emergency Care</Link></li>
+                <li><Link href="/treatments/restorative" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Dental Implants</Link></li>
+                <li><Link href="/treatments/cosmetic" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Cosmetic Whitening</Link></li>
+                <li><Link href="/treatments/cosmetic" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Veneers & Bonding</Link></li>
+                <li><Link href="/treatments/orthodontics" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Orthodontics</Link></li>
+                <li><Link href="/contact" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans font-bold">Emergency Care</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold text-gray-900 mb-6 uppercase text-xs tracking-widest font-sans">Support</h4>
               <ul className="space-y-4">
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Privacy Policy</Link></li>
-                <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Terms of Service</Link></li>
+                <li><Link href="/privacy" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Terms of Service</Link></li>
                 <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Cookie Settings</Link></li>
                 <li><Link href="#" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Accessibility</Link></li>
-                <li><Link href="#contact" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Contact Us</Link></li>
+                <li><Link href="/contact" className="text-gray-500 hover:text-primary transition-colors text-sm font-sans">Contact Us</Link></li>
               </ul>
             </div>
           </div>
