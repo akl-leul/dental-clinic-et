@@ -6,7 +6,6 @@ import Services from '@/components/Services';
 import Doctors from '@/components/Doctors';
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
 import TreatmentQuiz from '@/components/TreatmentQuiz';
 import ContactInfo from '@/components/ContactInfo';
 import FAQ from '@/components/FAQ';
@@ -47,7 +46,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Pricing />
       <Testimonials />
       <TreatmentQuiz />
       <ContactInfo />
