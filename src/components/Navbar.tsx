@@ -42,14 +42,12 @@ export default function Navbar() {
       dropdown: [
         { name: 'Our Story', href: '/about' },
         { name: 'Meet Our Dentists', href: '/dentists' },
-
-        { name: 'FAQs', href: '/faq' },
       ]
     },
     { name: 'Book', href: '/book' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
-
+    { name: 'FAQs', href: '/faq' },
     { name: 'Contact', href: '/contact' },
 
   ];

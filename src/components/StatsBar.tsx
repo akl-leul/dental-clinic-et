@@ -26,7 +26,7 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export default function StatsBar() {
   const stats = [
-    { value: 10, suffix: '+', label: 'Years Experience' },
+    { value: 15, suffix: '+', label: 'Years Experience' },
     { value: 50000, suffix: '+', label: 'Smiles Transformed' },
     { value: 15, suffix: '+', label: 'Expert Specialists' },
     { value: 99, suffix: '%', label: 'Patient Satisfaction' },
