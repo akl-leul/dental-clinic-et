@@ -29,7 +29,7 @@ export default function PreventiveDentistry() {
           </motion.div>
           <h1 className="text-5xl lg:text-8xl font-extrabold font-cormorant mb-8">Preventive Care</h1>
           <p className="text-xl text-white/70 max-w-2xl mx-auto italic font-sans leading-relaxed">
-            The best dental treatment is the one you never need. Our preventive approach stops problems before they start.
+            The best Dental treatment is the one you never need. Our preventive approach stops problems before they start.
           </p>
         </div>
       </div>

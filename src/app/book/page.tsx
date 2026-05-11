@@ -1,11 +1,51 @@
-'use client';
+ 'use client';
 
+import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
 import { Calendar, Phone, Clock, MessageSquare } from 'lucide-react';
 
 export default function BookAppointment() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [treatment, setTreatment] = useState('General Checkup');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [notes, setNotes] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
+
+    if (!name || !email || !phone || !treatment || !date || !time) {
+      setError('Please fill all required fields.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch('/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, treatment, date, time, notes }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || 'Failed to submit');
+      setSuccess('Appointment request submitted successfully. We will contact you soon.');
+      setName(''); setEmail(''); setPhone(''); setTreatment('General Checkup'); setDate(''); setTime(''); setNotes('');
+    } catch (err: any) {
+      console.error(err);
+      setError(err?.message || 'Submission failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gray-50">
       <Navbar />
@@ -42,27 +82,27 @@ export default function BookAppointment() {
 
             {/* Middle: The Form */}
             <div className="lg:col-span-2 bg-white rounded-[3rem] p-10 lg:p-16 shadow-2xl border border-gray-100">
-              <form className="space-y-8">
+              <form onSubmit={submit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Full Name</label>
-                    <input type="text" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="e.g. John Doe" />
+                    <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="e.g. John Doe" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Email Address</label>
-                    <input type="email" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="john@example.com" />
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="john@example.com" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Phone Number</label>
-                    <input type="tel" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="+251 ..." />
+                    <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" placeholder="+251 ..." />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Service Needed</label>
                     <div className="relative">
-                      <select className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all appearance-none text-gray-900">
+                      <select value={treatment} onChange={(e) => setTreatment(e.target.value)} className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all appearance-none text-gray-900">
                         <option>General Checkup</option>
                         <option>Cosmetic Dentistry</option>
                         <option>Orthodontics</option>
@@ -76,13 +116,27 @@ export default function BookAppointment() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Additional Message</label>
-                  <textarea rows={4} className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900 resize-none" placeholder="Tell us more about your visit..."></textarea>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Preferred Date</label>
+                    <input value={date} onChange={(e) => setDate(e.target.value)} type="date" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Preferred Time</label>
+                    <input value={time} onChange={(e) => setTime(e.target.value)} type="time" className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900" />
+                  </div>
                 </div>
 
-                <button className="w-full bg-primary hover:bg-primary-hover text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1">
-                  Send Message
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-sans">Additional Message</label>
+                  <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} className="w-full bg-[#F0F9FF]/50 border border-gray-100 px-6 py-4 rounded-2xl focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all placeholder:text-gray-400 text-gray-900 resize-none" placeholder="Tell us more about your visit..."></textarea>
+                </div>
+
+                {error && <div className="text-red-600 font-medium">{error}</div>}
+                {success && <div className="text-green-700 font-medium">{success}</div>}
+
+                <button disabled={loading} className="w-full bg-primary hover:bg-primary-hover disabled:opacity-60 text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-primary/30 transition-all transform hover:-translate-y-1">
+                  {loading ? 'Sending…' : 'Send Message'}
                 </button>
               </form>
             </div>

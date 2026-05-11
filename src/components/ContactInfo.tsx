@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
+import { Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ContactInfo() {
@@ -21,7 +21,7 @@ export default function ContactInfo() {
               <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3 font-sans">Our Location</h2>
               <h3 className="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-6 font-cormorant">Visit Our Modern Clinic in Addis</h3>
               <p className="text-xl text-gray-600 font-sans leading-relaxed">
-                Located in the heart of the city, our facility combines accessibility with world-class dental technology.
+                Located in the heart of the city, our facility combines accessibility with world-class Dental technology.
               </p>
             </div>
 
@@ -32,8 +32,7 @@ export default function ContactInfo() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900">Phone</h5>
-                  <p className="text-gray-600 text-sm">+251 911 234 567</p>
-                  <p className="text-gray-600 text-sm">+251 116 789 012</p>
+                  <p className="text-gray-600 text-sm">+251 911 382 531</p> 
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -42,8 +41,8 @@ export default function ContactInfo() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900">Email</h5>
-                  <p className="text-gray-600 text-sm">hello@dentivaclinic.com</p>
-                  <p className="text-gray-600 text-sm">bookings@dentiva.et</p>
+                  <p className="text-gray-600 text-sm">hello@yanaspecialitydentalclinic.com</p>
+                  <p className="text-gray-600 text-sm">bookings@yanaspecialitydentalclinic.com</p>
                 </div>
               </div>
             </div>
@@ -52,14 +51,14 @@ export default function ContactInfo() {
             <div className="relative w-full h-80 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-200 bg-gray-200 group">
               <div className="absolute inset-0 bg-gray-300 animate-pulse" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.551322079!2d38.7833!3d9.00!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24c4!2sBole%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1714800000000!5m2!1sen!2set"
-                className="absolute inset-0 w-full h-full border-0 filter grayscale contrast-125 opacity-80"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3991.8198039104645!2d38.8250729!3d9.0170558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b9bcee0d7febf%3A0x7415831026955ab3!2zWWFuYSBTcGVjaWFsaXR5IERlbnRhbCBDbGluaWMgfCBTYWxpdGUgTWhpcmV0IHwg4Yur4YqTIOGIjeGLqSDhi6jhjKXhiK3hiLUg4YiF4Yqt4Yid4YqTIOGKreGIiuGKkuGKrSB8IOGIs-GIiuGJsCDhiJ3hiIXhiKjhibU!5e1!3m2!1sen!2set!4v1778485131802!5m2!1sen!2set"
+                className="absolute inset-0 w-full h-full border-0 filter grayscale hover:grayscale-0 contrast-125 opacity-80"
                 allowFullScreen
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
               <a
-                href="https://maps.app.goo.gl/xxx"
+                href="https://maps.app.goo.gl/Tj83YyPDrq1o4X4f8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-6 right-6 bg-[#F0F9FF] text-gray-900 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-xl hover:bg-gray-50 transition-colors"

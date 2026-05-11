@@ -2,9 +2,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, Phone, MapPin, Clock, Calendar } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-
+import Image from 'next/image';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+// import { motion, AnimatePresence } from 'framer-motion';
+ 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -64,11 +65,11 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
-                <span className="text-white font-bold text-xl font-cormorant">DC</span>
+                <Image src="/logo.jpg" alt="DentalCare Logo" width={40} height={40} className="w-full h-full object-contain rounded-lg" />
               </div>
-              <span className={`font-bold text-xl tracking-tight font-cormorant transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-900' : 'text-white'
+              <span className={`font-bold mr-4   tracking-tight font-cormorant transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-900' : 'text-white'
                 }`}>
-                Dental<span className="text-primary">Care</span>
+                Yana Speciality <span className="text-primary">Dental Clinic</span>
               </span>
             </Link>
           </div>
@@ -108,21 +109,21 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <a
-              href="tel:+251911234567"
+              href="tel:+251911382531"
               className={`hidden lg:flex items-center gap-2 transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'
                 }`}
             >
               <Phone className="w-5 h-5 text-primary" />
-              <span className="font-bold">+251 911 234 567</span>
+              <span className="fontsm">+2519 1138 2531</span>
             </a>
             <Link
               href="/book"
               className="bg-primary hover:bg-primary-hover text-white px-5 lg:px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-primary/30 font-sans text-sm"
             >
               <Phone className="w-4 h-4" />
-              <span className="uppercase tracking-widest">Book Now</span>
+              <span className="uppercase tracking-widest sm:text-base">Book Now</span>
             </Link>
 
             {/* Mobile menu button */}

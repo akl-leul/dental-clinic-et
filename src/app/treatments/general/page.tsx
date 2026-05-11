@@ -15,7 +15,7 @@ export default function GeneralDentistry() {
           {['Routine Exams', 'Professional Cleaning', 'Fillings & Repair', 'Emergency Services'].map(s => (
             <div key={s} className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
               <h3 className="text-2xl font-bold font-cormorant mb-2">{s}</h3>
-              <p className="text-gray-500">Professional dental care utilizing modern techniques for your comfort.</p>
+              <p className="text-gray-500">Professional Dental care utilizing modern techniques for your comfort.</p>
             </div>
           ))}
         </div>

@@ -1,32 +1,56 @@
+ 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0F4C81;
-  --color-primary-hover: #0a355a;
-  --color-background: #F0F9FF;
-  --color-foreground: #0A0A0A;
+  /* Main teal color inspired by the logo */
+  --color-primary: #18B7BE;
+
+  /* Slightly darker teal for hover states */
+  --color-primary-hover: #10979D;
+
+  /* Soft clean background */
+  --color-background: #F4FEFE;
+
+  /* Main text color */
+  --color-foreground: #073B3D;
+
+  /* Extra optional accent shades */
+  --color-secondary: #7FE3E7;
+  --color-border: #C7F3F5;
 }
 
 @layer base {
   :root {
-    --background: #F0F9FF;
-    --foreground: #0A0A0A;
+    --background: #F4FEFE;
+    --foreground: #073B3D;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0a0a0a;
-      --foreground: #FAFAFA;
+      /* Elegant dark teal mode */
+      --background: #041F21;
+      --foreground: #E9FFFF;
     }
   }
-}
 
-html {
-  scroll-behavior: smooth;
-}
+  * {
+    border-color: var(--color-border);
+  }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
 }
+ 

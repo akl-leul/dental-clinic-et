@@ -23,7 +23,7 @@ export default function BlogIndex() {
       date: "Oct 18, 2024",
       author: "Dr. Elias Bekele",
       img: "/service_implant.png",
-      slug: "dental-implants-standard"
+      slug: "Dental-implants-standard"
     },
     {
       title: "The Link Between Oral Health and Heart Disease",
@@ -87,7 +87,7 @@ export default function BlogIndex() {
           <div className="absolute inset-0 bg-primary/10 opacity-30" />
           <h3 className="text-3xl lg:text-5xl font-extrabold font-cormorant mb-6 relative z-10">Subscribe for Updates</h3>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto italic font-sans relative z-10">
-            Get monthly dental health tips and exclusive offers delivered straight to your inbox.
+            Get monthly Dental health tips and exclusive offers delivered straight to your inbox.
           </p>
           <form className="max-w-md mx-auto flex gap-4 relative z-10">
             <input type="email" placeholder="Your email address" className="bg-white/10 border border-white/20 px-6 py-4 rounded-full flex-grow focus:outline-none focus:ring-2 focus:ring-primary/50 font-sans" />

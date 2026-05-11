@@ -38,12 +38,12 @@ export default function PediatricDentistry() {
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-gray-900 font-cormorant">Dentistry Designed for Kids</h2>
             <p className="text-gray-600 text-lg leading-relaxed font-sans">
-              Our pediatric team is specially trained to work with children, ensuring they feel safe and excited about their dental health. From the waiting room games to our "gentle-touch" cleanings, everything is designed with your child in mind.
+              Our pediatric team is specially trained to work with children, ensuring they feel safe and excited about their Dental health. From the waiting room games to our "gentle-touch" cleanings, everything is designed with your child in mind.
             </p>
             
             <div className="grid gap-6">
               {[
-                { title: 'The First Visit', desc: 'A quick, easy exam to get your child comfortable with the dental chair.', icon: <Heart className="w-5 h-5" /> },
+                { title: 'The First Visit', desc: 'A quick, easy exam to get your child comfortable with the Dental chair.', icon: <Heart className="w-5 h-5" /> },
                 { title: 'Protective Sealants', desc: 'Invisible shields applied to the back teeth to prevent 80% of cavities.', icon: <Shield className="w-5 h-5" /> },
                 { title: 'Safe Sedation', desc: 'Calming options for children who feel particularly anxious about treatment.', icon: <Cloud className="w-5 h-5" /> }
               ].map((item, i) => (

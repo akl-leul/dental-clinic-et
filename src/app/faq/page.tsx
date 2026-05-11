@@ -13,8 +13,8 @@ const faqCategories = [
     icon: <HelpCircle className="w-5 h-5" />,
     questions: [
       {
-        q: "What makes Dentiva Clinic different from other clinics in Addis?",
-        a: "We combine international expertise with state-of-the-art technology like 3D digital scanning and laser surgery. Our patient-first philosophy ensures that you are never just a number; we provide personalized treatment plans and a spa-like environment to reduce dental anxiety."
+        q: "What makes Yana Speciality Dental Clinic different from other clinics in Addis?",
+        a: "We combine international expertise with state-of-the-art technology like 3D digital scanning and laser surgery. Our patient-first philosophy ensures that you are never just a number; we provide personalized treatment plans and a spa-like environment to reduce Dental anxiety."
       },
       {
         q: "Where is the clinic located?",
@@ -32,12 +32,12 @@ const faqCategories = [
     icon: <ShieldCheck className="w-5 h-5" />,
     questions: [
       {
-        q: "Are dental implants painful?",
+        q: "Are Dental implants painful?",
         a: "Thanks to modern local anesthesia and our precision placement techniques, most patients report feeling only mild pressure during the procedure. Post-operative discomfort is usually comparable to a simple extraction and can be managed with standard over-the-counter pain relief."
       },
       {
         q: "At what age should my child first visit the dentist?",
-        a: "We recommend a child's first visit by their first birthday or when their first tooth appears. Early visits help children become comfortable with the dental environment and allow us to monitor development from the start."
+        a: "We recommend a child's first visit by their first birthday or when their first tooth appears. Early visits help children become comfortable with the Dental environment and allow us to monitor development from the start."
       },
       {
         q: "How long does professional teeth whitening last?",
@@ -74,7 +74,7 @@ const faqCategories = [
     icon: <Clock className="w-5 h-5" />,
     questions: [
       {
-        q: "What should I do in a dental emergency?",
+        q: "What should I do in a Dental emergency?",
         a: "Call our emergency line at +251 911 234 567 immediately. Whether it's a knocked-out tooth, severe pain, or a broken crown, we prioritize emergency cases to provide same-day relief."
       },
       {

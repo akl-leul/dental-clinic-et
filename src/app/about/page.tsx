@@ -8,8 +8,8 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   const values = [
-    { title: 'Excellence', desc: 'We utilize the highest standards of dental technology and ongoing education.', icon: <Target className="w-6 h-6" /> },
-    { title: 'Compassion', desc: 'We understand dental anxiety and treat every patient with gentle, personalized care.', icon: <Users className="w-6 h-6" /> },
+    { title: 'Excellence', desc: 'We utilize the highest standards of Dental technology and ongoing education.', icon: <Target className="w-6 h-6" /> },
+    { title: 'Compassion', desc: 'We understand Dental anxiety and treat every patient with gentle, personalized care.', icon: <Users className="w-6 h-6" /> },
     { title: 'Integrity', desc: 'Transparent pricing and honest recommendations for your long-term health.', icon: <Shield className="w-6 h-6" /> }
   ];
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-gray-900 font-cormorant leading-tight">Founded on Trust, Driven by Innovation.</h2>
             <p className="text-gray-600 text-lg leading-relaxed font-sans">
-              Our journey began in 2009 when Dr. Samuel Abebe identified a need for specialized prosthodontics in Addis Ababa. What started as a two-chair clinic has evolved into a multi-specialty center equipped with 3D digital scanners, laser surgical tools, and an in-house dental lab.
+              Our journey began in 2009 when Dr. Samuel Abebe identified a need for specialized prosthodontics in Addis Ababa. What started as a two-chair clinic has evolved into a multi-specialty center equipped with 3D digital scanners, laser surgical tools, and an in-house Dental lab.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed font-sans italic">
               "We don't just treat teeth; we treat people. Our goal is to make every visit feel like a conversation with a trusted friend."

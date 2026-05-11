@@ -126,7 +126,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl italic"
           >
-            Experience world-class dental care in the heart of Addis Ababa. Your journey to a perfect smile starts here.
+            Experience world-class Dental care in the heart of Addis Ababa. Your journey to a perfect smile starts here.
           </motion.p>
 
           <motion.div

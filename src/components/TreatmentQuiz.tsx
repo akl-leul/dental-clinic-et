@@ -28,7 +28,7 @@ export default function TreatmentQuiz() {
       ]
     },
     {
-      question: "When was your last dental visit?",
+      question: "When was your last Dental visit?",
       options: [
         "Less than 6 months ago",
         "6-12 months ago",

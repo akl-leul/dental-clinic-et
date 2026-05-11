@@ -63,7 +63,7 @@ export default function Doctors() {
               World-Class Expertise,<br />Right Here in Addis.
             </h3>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Dr. Samuel and our team of specialists are dedicated to providing the highest standard of dental care using modern techniques and state-of-the-art equipment.
+              Dr. Samuel and our team of specialists are dedicated to providing the highest standard of Dental care using modern techniques and state-of-the-art equipment.
             </p>
 
             <ul className="space-y-4 mb-10">

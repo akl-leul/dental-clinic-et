@@ -30,7 +30,7 @@ const blogPosts = {
       </>
     )
   },
-  'dental-implants-standard': {
+  'Dental-implants-standard': {
     title: "Why Dental Implants are the Gold Standard",
     date: "Oct 18, 2024",
     author: "Dr. Elias Bekele",
@@ -43,7 +43,7 @@ const blogPosts = {
         <h2 className="text-3xl font-bold text-gray-900 font-cormorant mt-12 mb-6">Bone Preservation</h2>
         <p className="mb-8 text-gray-600">Unlike bridges or dentures, implants stimulate the jawbone, preventing the sunken appearance that often comes with tooth loss. This preservation of facial structure is a key benefit unique to implants.</p>
         <h2 className="text-3xl font-bold text-gray-900 font-cormorant mt-12 mb-6">Durability & Success</h2>
-        <p className="mb-8 text-gray-600">With proper care, dental implants have a 98% success rate and can last a lifetime. They don't require the reduction of adjacent teeth, preserving more of your natural smile.</p>
+        <p className="mb-8 text-gray-600">With proper care, Dental implants have a 98% success rate and can last a lifetime. They don't require the reduction of adjacent teeth, preserving more of your natural smile.</p>
         <div className="bg-gray-900 p-10 rounded-[2.5rem] text-white my-16">
           <h4 className="text-primary font-bold mb-4 font-sans uppercase tracking-widest text-xs">The Procedure</h4>
           <ul className="space-y-4">

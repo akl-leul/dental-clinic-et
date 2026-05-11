@@ -13,8 +13,8 @@ export default function FAQ() {
       answer: "Yes, we work with several major international insurance providers. Please contact our reception with your policy details before your appointment so we can verify coverage."
     },
     {
-      question: "How much does a dental implant cost?",
-      answer: "While prices vary depending on individual needs, our premium dental implants typically start from 15,000 ETB. We offer transparent pricing and will provide a detailed quote during your initial consultation."
+      question: "How much does a Dental implant cost?",
+      answer: "While prices vary depending on individual needs, our premium Dental implants typically start from 15,000 ETB. We offer transparent pricing and will provide a detailed quote during your initial consultation."
     },
     {
       question: "Is the teeth whitening procedure painful?",
@@ -22,7 +22,7 @@ export default function FAQ() {
     },
     {
       question: "How quickly can I get an emergency appointment?",
-      answer: "We reserve slots daily specifically for dental emergencies. If you are in severe pain, please call us immediately and we will ensure you are seen by a dentist within hours."
+      answer: "We reserve slots daily specifically for Dental emergencies. If you are in severe pain, please call us immediately and we will ensure you are seen by a dentist within hours."
     }
   ];
 
