@@ -1,10 +1,37 @@
-'use client';
+"use client";
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Award, CheckCircle } from 'lucide-react';
 
+interface Doc {
+  id?: number;
+  name: string;
+  specialty?: string;
+  bio?: string | null;
+  image?: string | null;
+}
+
 export default function Doctors() {
+  const [doctors, setDoctors] = useState<Doc[] | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/doctors');
+        if (!res.ok) return setDoctors([]);
+        const data = await res.json();
+        if (mounted) setDoctors(data.doctors || []);
+      } catch (e) {
+        console.error('Error fetching doctors', e);
+        if (mounted) setDoctors([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
   return (
     <section id="about" className="py-24 h-full bg-[#F0F9FF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,13 +123,13 @@ export default function Doctors() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: "Dr. Martha Tadesse", role: "Orthodontist", img: "/happy_patient_3.png" },
-              { name: "Dr. Elias Bekele", role: "Oral Surgeon", img: "/doctor_profile.png" },
-              { name: "Dr. Selamawit G.", role: "Pediatric Dentist", img: "/happy_patient_2.png" }
-            ].map((doc, i) => (
+            {(doctors && doctors.length > 0 ? doctors : [
+              { name: "Dr. Martha Tadesse", specialty: "Orthodontist", image: "/happy_patient_3.png" },
+              { name: "Dr. Elias Bekele", specialty: "Oral Surgeon", image: "/doctor_profile.png" },
+              { name: "Dr. Selamawit G.", specialty: "Pediatric Dentist", image: "/happy_patient_2.png" }
+            ]).map((doc, i) => (
               <motion.div
-                key={i}
+                key={doc.id ?? i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -110,15 +137,16 @@ export default function Doctors() {
                 className="group relative overflow-hidden rounded-[2.5rem] bg-gray-50 aspect-[4/5] hover:shadow-2xl transition-all duration-500"
               >
                 <Image
-                  src={doc.img}
+                  src={doc.image || '/doctor_profile.png'}
                   alt={doc.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-8">
                   <h4 className="text-2xl font-bold text-white font-cormorant">{doc.name}</h4>
-                  <p className="text-primary font-medium text-sm font-sans tracking-widest uppercase">{doc.role}</p>
+                  <p className="text-primary font-medium text-sm font-sans tracking-widest uppercase">{doc.specialty}</p>
                 </div>
               </motion.div>
             ))}

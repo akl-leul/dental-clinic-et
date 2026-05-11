@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
+export const runtime = 'nodejs';
+
 export async function PATCH(request: Request, context: { params: any }) {
   try {
     const params = await context.params;

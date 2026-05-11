@@ -32,7 +32,7 @@ export default function ContactInfo() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900">Phone</h5>
-                  <p className="text-gray-600 text-sm">+251 911 382 531</p> 
+                  <p className="text-gray-600 text-sm">+251 910 585 806</p> 
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -41,9 +41,8 @@ export default function ContactInfo() {
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900">Email</h5>
-                  <p className="text-gray-600 text-sm">hello@yanaspecialitydentalclinic.com</p>
-                  <p className="text-gray-600 text-sm">bookings@yanaspecialitydentalclinic.com</p>
-                </div>
+                  <p className="text-gray-600 text-sm">caredentdentalcenter@gmail.com</p>
+                    </div>
               </div>
             </div>
 
@@ -51,14 +50,14 @@ export default function ContactInfo() {
             <div className="relative w-full h-80 rounded-[2.5rem] overflow-hidden shadow-inner border border-gray-200 bg-gray-200 group">
               <div className="absolute inset-0 bg-gray-300 animate-pulse" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3991.8198039104645!2d38.8250729!3d9.0170558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b9bcee0d7febf%3A0x7415831026955ab3!2zWWFuYSBTcGVjaWFsaXR5IERlbnRhbCBDbGluaWMgfCBTYWxpdGUgTWhpcmV0IHwg4Yur4YqTIOGIjeGLqSDhi6jhjKXhiK3hiLUg4YiF4Yqt4Yid4YqTIOGKreGIiuGKkuGKrSB8IOGIs-GIiuGJsCDhiJ3hiIXhiKjhibU!5e1!3m2!1sen!2set!4v1778485131802!5m2!1sen!2set"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63871.319894007895!2d38.6927342!3d9.0045934!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b851d937c8fcf%3A0x5b37894e25a5b469!2sCaredent%20Speciality%20Dental%20Clinic!5e1!3m2!1sen!2set!4v1778494273504!5m2!1sen!2set"
                 className="absolute inset-0 w-full h-full border-0 filter grayscale hover:grayscale-0 contrast-125 opacity-80"
                 allowFullScreen
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
               <a
-                href="https://maps.app.goo.gl/Tj83YyPDrq1o4X4f8"
+                href="https://maps.app.goo.gl/5WSHuzJYCam5YfCz6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-6 right-6 bg-[#F0F9FF] text-gray-900 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-xl hover:bg-gray-50 transition-colors"

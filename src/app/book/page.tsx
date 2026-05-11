@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Calendar, Phone, Clock, MessageSquare } from 'lucide-react';
+import { Calendar, Phone, Clock, Check, X } from 'lucide-react';
 
 export default function BookAppointment() {
   const [name, setName] = useState('');
@@ -22,7 +22,7 @@ export default function BookAppointment() {
     setError(null);
     setSuccess(null);
 
-    if (!name || !email || !phone || !treatment || !date || !time) {
+    if (!name || !phone || !treatment || !date || !time) {
       setError('Please fill all required fields.');
       return;
     }
@@ -38,9 +38,10 @@ export default function BookAppointment() {
       if (!res.ok) throw new Error(json?.error || 'Failed to submit');
       setSuccess('Appointment request submitted successfully. We will contact you soon.');
       setName(''); setEmail(''); setPhone(''); setTreatment('General Checkup'); setDate(''); setTime(''); setNotes('');
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const error = err instanceof Error ? err.message : 'Submission failed';
       console.error(err);
-      setError(err?.message || 'Submission failed');
+      setError(error);
     } finally {
       setLoading(false);
     }
@@ -143,6 +144,48 @@ export default function BookAppointment() {
           </div>
         </div>
       </div>
+
+      {/* Success Popup Modal */}
+      {success && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full animate-in fade-in zoom-in-95 duration-300">
+            <div className="p-8 text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Check className="w-8 h-8 text-green-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Success!</h2>
+              <p className="text-gray-600 mb-8">{success}</p>
+              <button
+                onClick={() => setSuccess(null)}
+                className="w-full bg-primary hover:bg-primary-hover text-white py-3 rounded-xl font-bold transition-all"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Error Popup Modal */}
+      {error && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full animate-in fade-in zoom-in-95 duration-300">
+            <div className="p-8 text-center">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <X className="w-8 h-8 text-red-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Error</h2>
+              <p className="text-gray-600 mb-8">{error}</p>
+              <button
+                onClick={() => setError(null)}
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold transition-all"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </main>
   );

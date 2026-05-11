@@ -1,7 +1,67 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, X } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const successTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (successTimerRef.current !== null) {
+        window.clearTimeout(successTimerRef.current);
+      }
+    };
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          subject: 'Footer Contact',
+          message: `${phone ? `Phone: ${phone}\n\n` : ''}${message}`,
+        }),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.error || 'Failed to send message');
+      }
+
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+      setSuccess(true);
+
+      if (successTimerRef.current !== null) {
+        window.clearTimeout(successTimerRef.current);
+      }
+      successTimerRef.current = window.setTimeout(() => setSuccess(false), 3000);
+    } catch (err: unknown) {
+      console.error('Footer contact submit error', err);
+      setError(err instanceof Error ? err.message : 'Error sending message');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <footer id="contact" className="bg-[#0A192F] pt-24 pb-12 border-t border-white/5 text-white">
@@ -20,7 +80,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <h5 className="font-bold text-white text-lg font-cormorant">Visit Us</h5>
-                    <p className="text-gray-400 font-sans">Sealite mihret, figa traffic light. <br />Addis Ababa, Ethiopia</p>
+                    <p className="text-gray-400 font-sans">subcity, Kazaddis BLD 8th floor, <br />Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
 
@@ -38,23 +98,61 @@ export default function Footer() {
 
             <div id="book" className="bg-white/5 backdrop-blur-sm rounded-[2.5rem] p-10 shadow-2xl border border-white/10">
               <h3 className="text-3xl font-bold text-white mb-8 font-cormorant">Contact Us</h3>
-              <form className="space-y-6" suppressHydrationWarning>
-                <input type="text" placeholder="Full Name" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans" />
+              <form className="space-y-6" onSubmit={handleSubmit} suppressHydrationWarning>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  suppressHydrationWarning
+                  className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans"
+                />
                 <div className="grid grid-cols-2 gap-4">
-                  <input type="email" placeholder="Email Address" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans" />
-                  <input type="tel" placeholder="Phone Number" suppressHydrationWarning className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans" />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    suppressHydrationWarning
+                    className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    suppressHydrationWarning
+                    className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 font-sans"
+                  />
                 </div>
-                <textarea placeholder="How can we help you?" rows={4} suppressHydrationWarning className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 resize-none font-sans" />
-                <button type="button" className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-5 rounded-xl shadow-xl hover:shadow-primary/40 transition-all transform hover:-translate-y-1">
-                  Send Message
-                </button>
+                <textarea
+                  placeholder="How can we help you?"
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  suppressHydrationWarning
+                  className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors placeholder:text-gray-500 resize-none font-sans"
+                />
+                <div className="flex items-center gap-4">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-5 rounded-xl shadow-xl hover:shadow-primary/40 transition-all transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {loading ? 'Sending…' : 'Send Message'}
+                  </button>
+                </div>
+                {error && <p className="text-sm text-red-300">{error}</p>}
               </form>
             </div>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 pt-16 border-t border-white/10">
             <div className="col-span-2 lg:col-span-1">
-              <h3 className="text-2xl font-bold text-white mb-6 font-cormorant">Yana Speciality Dental Clinic</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 font-cormorant">Caredent Speciality Dental Clinic</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6 font-sans">
                 Providing world-class Dental care in Addis Ababa with state-of-the-art technology and a patient-first approach.
               </p>
@@ -122,7 +220,7 @@ export default function Footer() {
 
           <div className="pt-8 mt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs font-medium font-sans italic">
-              © {new Date().getFullYear()} Yana Speciality Dental Clinic. Premium Care in Addis Ababa.
+              © {new Date().getFullYear()} Caredent Speciality Dental Clinic. Premium Care in Addis Ababa.
             </p>
           </div>
         </div>
@@ -140,6 +238,24 @@ export default function Footer() {
           Chat with us
         </span>
       </a>
+
+      {success && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setSuccess(false)} />
+          <div className="relative z-10 w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setSuccess(false)}
+              className="absolute right-4 top-4 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+              aria-label="Close"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <h3 className="text-2xl font-bold text-gray-900 font-cormorant mb-3">Message sent</h3>
+            <p className="text-gray-600">Thanks — we&apos;ll get back to you soon.</p>
+          </div>
+        </div>
+      )}
     </>
   );
 }

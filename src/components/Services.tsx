@@ -1,11 +1,40 @@
-'use client';
 
+"use client";
+
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Smile, Search, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
+interface ServiceItem {
+  id?: number;
+  name: string;
+  description: string;
+  icon?: string | null;
+  price?: string | null;
+  image?: string | null;
+}
+
 export default function Services() {
-  const services = [
+  const [services, setServices] = useState<ServiceItem[] | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/services');
+        if (!res.ok) return setServices([]);
+        const data = await res.json();
+        if (mounted) setServices(data.services || []);
+      } catch (e) {
+        console.error('Error fetching services', e);
+        if (mounted) setServices([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  const fallback = [
     {
       title: 'Dental Implants',
       description: 'Permanent, natural-looking tooth replacements that restore your smile and confidence.',
@@ -74,27 +103,29 @@ export default function Services() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 xl:gap-12"
         >
-          {services.map((service, index) => (
+          {(services && services.length > 0 ? services : fallback).map((service: any, index: number) => (
             <motion.div
-              key={index}
+              key={service.id ?? index}
               variants={itemVariants}
               className="group aspect-square relative rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 border border-gray-100 mx-auto w-full max-w-[400px] cursor-pointer"
             >
               <Image
-                src={service.image}
-                alt={service.title}
+                src={service.image || '/service_implant.png'}
+                alt={service.name || service.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 1024px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
 
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <div className="w-12 h-12 bg-[#F0F9FF] rounded-xl flex items-center justify-center shadow-lg mb-4 transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                  {service.icon}
+                  {/* icon preserved only for fallback */}
+                  {!service.icon ? <Activity className="w-8 h-8 text-primary" /> : null}
                 </div>
 
                 <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2 font-cormorant transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  {service.title}
+                  {service.name || service.title}
                 </h4>
 
                 <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 delay-100">
@@ -105,7 +136,7 @@ export default function Services() {
 
                 <div className="pt-4 border-t border-white/20 mt-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                   <span className="text-[10px] text-primary font-bold uppercase tracking-widest">Starting From</span>
-                  <p className="text-xl font-bold text-white mt-0.5">{service.price}</p>
+                  <p className="text-xl font-bold text-white mt-0.5">{service.price || service.price}</p>
                 </div>
               </div>
             </motion.div>

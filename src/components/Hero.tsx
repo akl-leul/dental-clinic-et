@@ -113,7 +113,7 @@ export default function Hero() {
                 variants={child}
                 style={{ marginRight: "15px" }}
                 key={index}
-                className={word === "Smiles" ? "text-primary italic" : ""}
+                className={word === "Smiles" ? "text-green-500" : ""}
               >
                 {word}
               </motion.span>
@@ -126,7 +126,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl italic"
           >
-            Experience world-class Dental care in the heart of Addis Ababa. Your journey to a perfect smile starts here.
+            Your Smile, Our Signature.
           </motion.p>
 
           <motion.div

@@ -1,35 +1,39 @@
- 
 @import "tailwindcss";
 
 @theme {
-  /* Main teal color inspired by the logo */
-  --color-primary: #18B7BE;
+  /* Deep charcoal from the logo */
+  --color-primary: #121D26;
 
-  /* Slightly darker teal for hover states */
-  --color-primary-hover: #10979D;
+  /* Slightly softer hover variation */
+  --color-primary-hover: #1C2A35;
 
-  /* Soft clean background */
-  --color-background: #F4FEFE;
+  /* Clean light gray background */
+  --color-background: #F3F3F3;
 
   /* Main text color */
-  --color-foreground: #073B3D;
+  --color-foreground: #0F1720;
 
-  /* Extra optional accent shades */
-  --color-secondary: #7FE3E7;
-  --color-border: #C7F3F5;
+  /* Soft silver accent from the logo */
+  --color-secondary: #B8B8BA;
+
+  /* Border and subtle UI surfaces */
+  --color-border: #D9D9DB;
+
+  /* Optional muted surface */
+  --color-surface: #FFFFFF;
 }
 
 @layer base {
   :root {
-    --background: #F4FEFE;
-    --foreground: #073B3D;
+    --background: #F3F3F3;
+    --foreground: #0F1720;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      /* Elegant dark teal mode */
-      --background: #041F21;
-      --foreground: #E9FFFF;
+      /* Elegant dark mode inspired by logo contrast */
+      --background: #0B1117;
+      --foreground: #F5F5F5;
     }
   }
 
@@ -45,7 +49,9 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
@@ -53,4 +59,3 @@
     color: white;
   }
 }
- 

@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -7,8 +8,36 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
+interface Post {
+  id?: number;
+  title: string;
+  excerpt?: string | null;
+  date?: string | null;
+  author?: string | null;
+  img?: string | null;
+  slug?: string;
+}
+
 export default function BlogIndex() {
-  const posts = [
+  const [posts, setPosts] = useState<Post[] | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/blog');
+        if (!res.ok) return setPosts([]);
+        const data = await res.json();
+        if (mounted) setPosts((data.blogs || []).filter((b: any) => b.published));
+      } catch (e) {
+        console.error('Error fetching blog posts', e);
+        if (mounted) setPosts([]);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
+
+  const fallback: Post[] = [
     {
       title: "5 Tips for a Whiter Smile at Home",
       excerpt: "Discover simple habits and natural remedies to keep your teeth sparkling white between professional treatments.",
@@ -23,7 +52,7 @@ export default function BlogIndex() {
       date: "Oct 18, 2024",
       author: "Dr. Elias Bekele",
       img: "/service_implant.png",
-      slug: "Dental-implants-standard"
+      slug: "dental-implants-standard"
     },
     {
       title: "The Link Between Oral Health and Heart Disease",
@@ -34,6 +63,8 @@ export default function BlogIndex() {
       slug: "oral-health-heart"
     }
   ];
+
+  const postsToRender = posts && posts.length > 0 ? posts : fallback;
 
   return (
     <main className="min-h-screen bg-[#F0F9FF]">
@@ -48,9 +79,9 @@ export default function BlogIndex() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {posts.map((post, i) => (
+          {postsToRender.map((post, i) => (
             <motion.article
-              key={i}
+              key={post.id ?? i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -58,7 +89,7 @@ export default function BlogIndex() {
               className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col h-full"
             >
               <div className="relative h-64 overflow-hidden">
-                <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <Image src={(post as any).image || post.img || '/happy_patient.png'} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 1024px) 100vw, 33vw" />
                 <div className="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full font-sans">
                   Dental Care
                 </div>

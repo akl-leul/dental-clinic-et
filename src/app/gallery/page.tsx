@@ -1,13 +1,44 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Sparkles, Camera, Award } from 'lucide-react';
 
+interface GalleryItem {
+  id?: number;
+  title: string;
+  category: string;
+  stats: string;
+  image: string;
+}
+
 export default function GalleryPage() {
-  const cases = [
+  const [items, setItems] = useState<GalleryItem[] | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    (async () => {
+      try {
+        const res = await fetch('/api/gallery');
+        if (!res.ok) return setItems([]);
+        const data = await res.json();
+        if (mounted) setItems(data.items || []);
+      } catch (error) {
+        console.error('Error fetching gallery items:', error);
+        if (mounted) setItems([]);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const fallback: GalleryItem[] = [
     { title: 'Full Smile Restoration', category: 'Cosmetic', image: '/happy_patient.png', stats: '8 Veneers' },
     { title: 'Invisalign Transformation', category: 'Orthodontics', image: '/happy_patient_3.png', stats: '14 Months' },
     { title: 'Dental Implants', category: 'Restorative', image: '/service_implant.png', stats: '2 Implants' },
@@ -15,6 +46,8 @@ export default function GalleryPage() {
     { title: 'Pediatric Alignment', category: 'Pediatric', image: '/happy_patient_4.png', stats: 'Early Care' },
     { title: 'Hollywood Smile', category: 'Cosmetic', image: '/service_cosmetic.png', stats: 'Premium' }
   ];
+
+  const cases = items && items.length > 0 ? items : fallback;
 
   return (
     <main className="min-h-screen bg-[#F0F9FF]">
@@ -46,7 +79,7 @@ export default function GalleryPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {cases.map((c, i) => (
             <motion.div
-              key={i}
+              key={c.id ?? i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -54,7 +87,7 @@ export default function GalleryPage() {
               className="group relative rounded-[3rem] overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
-                <Image src={c.image} alt={c.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <Image src={c.image} alt={c.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
                 
                 <div className="absolute top-6 left-6 flex gap-2">
