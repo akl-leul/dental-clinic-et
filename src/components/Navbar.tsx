@@ -69,7 +69,7 @@ export default function Navbar() {
               </div>
               <span className={`font-bold mr-4   tracking-tight font-cormorant transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-900' : 'text-white'
                 }`}>
-                Yana Speciality <span className="text-primary">Dental Clinic</span>
+                NovaDent 
               </span>
             </Link>
           </div>
@@ -111,12 +111,12 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <a
-              href="tel:+251911382531"
+              href="tel:+251910585806"
               className={`hidden lg:flex items-center gap-2 transition-colors duration-500 ${navDisplayScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'
                 }`}
             >
               <Phone className="w-5 h-5 text-primary" />
-              <span className="fontsm">+2519 1138 2531</span>
+              <span className="fontsm">+251 910 585 806</span>
             </a>
             <Link
               href="/book"

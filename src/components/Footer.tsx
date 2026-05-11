@@ -20,7 +20,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <h5 className="font-bold text-white text-lg font-cormorant">Visit Us</h5>
-                    <p className="text-gray-400 font-sans">Sealite mihret, figa traffic light. <br />Addis Ababa, Ethiopia</p>
+                    <p className="text-gray-400 font-sans">subcity, Kazaddis BLD 8th floor, <br />Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 pt-16 border-t border-white/10">
             <div className="col-span-2 lg:col-span-1">
-              <h3 className="text-2xl font-bold text-white mb-6 font-cormorant">Yana Speciality Dental Clinic</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 font-cormorant">Caredent Speciality Dental Clinic</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6 font-sans">
                 Providing world-class Dental care in Addis Ababa with state-of-the-art technology and a patient-first approach.
               </p>
@@ -122,7 +122,7 @@ export default function Footer() {
 
           <div className="pt-8 mt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs font-medium font-sans italic">
-              © {new Date().getFullYear()} Yana Speciality Dental Clinic. Premium Care in Addis Ababa.
+              © {new Date().getFullYear()} Caredent Speciality Dental Clinic. Premium Care in Addis Ababa.
             </p>
           </div>
         </div>

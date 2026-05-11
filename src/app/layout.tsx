@@ -19,9 +19,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Yana Speciality Dental Clinic | Premium Oral Care in Addis Ababa",
-  description: "Experience world-class dentistry at Yana Speciality Dental Clinic. From cosmetic smile design to precision implants, we provide expert care with state-of-the-art technology in the heart of Ethiopia.",
-  keywords: ["dentist Addis Ababa", "Dental implants Ethiopia", "cosmetic dentistry Addis", "orthodontics Addis Ababa", "Yana Speciality Dental Clinic"],
+  title: "Caredent Speciality Dental Clinic | Premium Oral Care in Addis Ababa",
+  description: "Experience world-class dentistry at Caredent Speciality Dental Clinic. From cosmetic smile design to precision implants, we provide expert care with state-of-the-art technology in the heart of Ethiopia.",
+  keywords: ["dentist Addis Ababa", "Dental implants Ethiopia", "cosmetic dentistry Addis", "orthodontics Addis Ababa", "Caredent Speciality Dental Clinic"],
   icons: {
     icon: '/logo.jpg',
     shortcut: '/logo.jpg',

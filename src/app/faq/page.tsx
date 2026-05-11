@@ -13,7 +13,7 @@ const faqCategories = [
     icon: <HelpCircle className="w-5 h-5" />,
     questions: [
       {
-        q: "What makes Yana Speciality Dental Clinic different from other clinics in Addis?",
+        q: "What makes Caredent Speciality Dental Clinic different from other clinics in Addis?",
         a: "We combine international expertise with state-of-the-art technology like 3D digital scanning and laser surgery. Our patient-first philosophy ensures that you are never just a number; we provide personalized treatment plans and a spa-like environment to reduce Dental anxiety."
       },
       {
